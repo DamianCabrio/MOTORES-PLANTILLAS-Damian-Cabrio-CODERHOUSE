@@ -1,0 +1,12 @@
+extends layouts/layout.pug
+include partials/_product.pug
+block content
+  .container.contact-form.py-2
+    a.btn.btn-primary.my-2(href='/')="Ir a formulario"
+    if products.length
+      .row.row-cols-1.row-cols-md-3.g-4
+        each product in products
+          +product(product)
+      a.btn.btn-primary.my-2(href='/')="Ir a formulario"
+    else
+      h2="Lo sentimos, no hay ningun producto que mostrar. Vuelva mas tarde."
